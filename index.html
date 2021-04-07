@@ -22,8 +22,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Comfortaa", cursive;
-  /*font-family: 'Lato', sans-serif;*/
 }
 a {
   color: inherit;
@@ -35,6 +33,7 @@ body {
 
   height: 100%;
   overflow: hidden;
+  font-family: "Comfortaa", cursive;
 }
 
 
@@ -45,7 +44,7 @@ body {
 .slide-01 {
   background: url('bg.png') no-repeat;
   background-position: center;
-  background-size: 150%;
+  background-size: 100% 100%;
   overflow: hidden;
 }
 
@@ -170,7 +169,7 @@ body {
 .slide-02 {
   background: url('bg2.png') no-repeat;
   background-position: center;
-  background-size: 150%;
+  background-size: 100% 100%;
 }
 
 .fb {
@@ -191,7 +190,7 @@ body {
 .slide-03 {
  background: url('bg3.png') no-repeat;
   background-position: center;
-  background-size: 150%;
+  background-size: 100% 100%;
 }
 
 .slide-03-logo {
@@ -404,7 +403,27 @@ body {
           .loading-tag
           {
               margin-top: 20px;
+              font-family: "Comfortaa", cursive !important;
+
           }
+
+          .zoomOut
+          {
+              animation: zoom-out 5s linear;
+          }
+          @keyframes zoom-out
+          {
+              0%
+              {
+                  background-size: 120% 120%;
+              }
+              100%{
+                  background-size: 100% 100%;
+              }
+
+          }
+          
+         
          
           
         
@@ -498,18 +517,18 @@ body {
                    </a>
 
                    <a href="http://www.silas-koutsochristou.com/"   class="contact-container" data-swiper-parallax="-300">
-                    <img src="webicon.png" target="_blank" alt="web-icon"/>
+                    <img src="webicon.png" alt="web-icon"/>
                     <p>www.silas-koutsochristou.com</p>
                    </a>
 
                    <a href="http://www.housedecor.gr/"  class="contact-container" data-swiper-parallax="-300">
-                    <img src="webicon.png"  target="_blank" alt="web-icon"/>
+                    <img src="webicon.png"  alt="web-icon"/>
                     <p>www.housedecor.gr</p>
                    </a>
 
                    
                    <a href="#!"  class="contact-container mg-bottom" data-swiper-parallax="-300">
-                    <img src="locationicon.png" target="_blank"  alt="location-icon"/>
+                    <img src="locationicon.png"  alt="location-icon"/>
                     <p>Π.Ράλλη 37A, Ταύρος, 177-78 </p>
                    </a>
 
@@ -539,7 +558,7 @@ body {
                 <h1 class="heading" data-swiper-parallax="-200">ΕΠΙΠΛΟ – ΔΙΑΚΟΣΜΗΣΗ  ΕΠΑΓΓΕΛΜΑΤΙΚΟΣ ΕΞΟΠΛΙΣΜΟΣ</h1>
                 <p class="subhead"  data-swiper-parallax="-200">Η εταιρεία Ν.ΣΥΛΑΣ-Α.ΚΟΥΤΣΟΧΡΗΣΤΟΥ Α.Ε. ξεκίνησε το 1984 με κατασκευή επίπλων για ξενοδοχεία και ενοικιαζόμενα δωμάτια. Παράλληλα έφτιαχνε έπιπλα παιδικά και έπιπλα για κομμωτήρια.</p>
 
-                <a href="https://www.facebook.com/HouseDecor.gr" target="_blank"><img src="facebook.png" class="fb" data-swiper-parallax="-300"/></a>
+                <a href="#!"><img src="facebook.png" class="fb" data-swiper-parallax="-300"/></a>
                </div> <!-- end of container -->
     
             <img src="backarrowtwo.png" alt="next-arrow-icon" data-nav="previous"  class="main-nav prev swiper-button-prev  prev-icon"   /> 
@@ -560,16 +579,16 @@ body {
                 <img src="house-decor-logo.png" alt="logo" class="slide-03-logo" data-swiper-parallax="-200"/>
 
                 <p class="subhead subhead-03" data-swiper-parallax="-200">Η Διακόσμηση ολοκληρώνει το concept ενός χώρου, ως μια φυσική συνέχεια της επίπλωσης.</p>
-                  <p class="subhead subhead-03 no-mg-top" data-swiper-parallax="-200">Το καλαίσθητο design μπορεί να αλλάξει την όψη του και στο HouseDecor αυτό μπορεί να γίνει πραγματικότητα</p> 
+                  <p class="subhead subhead-03 no-mg-top" data-swiper-parallax="-200">Το καλαίσθητο design μπορεί να αλλάξει την όψη του και στο HouseDecor αυτό μπορεί να γίνει πραγματικότητα.</p> 
 
 
                 <div class="social-icons">
-                  <a href="https://www.instagram.com/housedecor.gr/" target="_blank"  class="insta-03" data-swiper-parallax="-300"><img src="insta-white.png" alt="insta"  /></a>
-                  <a href="https://www.facebook.com/HouseDecor.gr"  target="_blank" class="fb-03" data-swiper-parallax="-300"><img src="facebook-white.png" alt="fb"  /></a>
+                  <a href="https://www.instagram.com/" class="insta-03" data-swiper-parallax="-300"><img src="insta-white.png" alt="insta"  /></a>
+                  <a href="https://www.facebook.com/HouseDecor.gr" class="fb-03" data-swiper-parallax="-300"><img src="facebook-white.png" alt="fb"  /></a>
                 </div>
 
                 <div class="btn-outline" data-swiper-parallax="-300">
-                  <a href="http://www.housedecor.gr/" target="_blank" class="primary-btn">
+                  <a href="#!" class="primary-btn">
                     SHOP NOW
                   </a>  
                 </div>
@@ -627,97 +646,80 @@ body {
 
   const shareAnim = new TimelineLite({paused:true});
   const closeAnim = new TimelineLite({paused:true});
-  const t1 = new TimelineLite({paused:true});
-  const t2 = new TimelineLite({paused:true});
-  const t3 = new TimelineLite({paused:true});
+  
+
+   /*image zoom in animations*/
+    var Slide1 = document.querySelector(".slide-01");
+    var Slide2 = document.querySelector(".slide-02");
+    var Slide3 = document.querySelector(".slide-03");
+    var i = 3;
+    var j=3;
+
+    var test = setInterval(function(){ 
+    console.log(swiper.activeIndex);
+
+               if(swiper.activeIndex == 0)
+                {
+                    i = swiper.activeIndex;
+                    
+                    if(i!==j)
+                    {
+                    Slide1.classList.add("zoomOut");
+                    Slide2.classList.remove("zoomOut");
+                    Slide3.classList.remove("zoomOut");
+                    Slide2.style.backgroundSize = "120% 120%";
+                    Slide3.style.backgroundSize = "120% 120%";
+                    Slide1.style.backgroundSize = "100% 100%";
+                     
+                    
+                    j = i;
+                    }
+                }
+                else if(swiper.activeIndex == 1)
+                {
+                    i = swiper.activeIndex;
+                    
+                    if(i!==j)
+                    {
+                    
+                    Slide2.classList.add("zoomOut");
+                    Slide3.classList.remove("zoomOut");
+                    Slide1.classList.remove("zoomOut");
+                    
+                    Slide3.style.backgroundSize = "120% 120%";
+                    Slide1.style.backgroundSize = "120% 120%";
+                    Slide2.style.backgroundSize = "100% 100%";
+                   
+                    j = i;
+                    }
+                }
+                else if(swiper.activeIndex == 2)
+                {
+                    i = swiper.activeIndex;
+                    
+                    if(i!==j)
+                    {
+                    
+                    Slide2.classList.remove("zoomOut");
+                    Slide3.classList.add("zoomOut");
+                    Slide1.classList.remove("zoomOut");
+                   
+                    Slide2.style.backgroundSize = "120% 120%";
+                    Slide1.style.backgroundSize = "120% 120%";
+                    Slide3.style.backgroundSize = "100% 100%";
+                    
+                    j = i;
+                    }
+                }
+
+    },1000);
+
  
 
-  t1.fromTo('.slide-01',5,{
-      backgroundSize : '150%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '100%',
-  })
-  .fromTo('.slide-02',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-  .fromTo('.slide-03',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-      
-      
-      
-      
-  t2.fromTo('.slide-02',5,{
-      backgroundSize : '150%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '100%',
-  })
-  .fromTo('.slide-01',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-  .fromTo('.slide-03',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-      
-      
-      
-  t3.fromTo('.slide-03',5,{
-      backgroundSize : '150%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '100%',
-  })
-  .fromTo('.slide-02',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-  .fromTo('.slide-01',2,{
-      backgroundSize : '100%',
-      ease: Power2.easeOut,
-  },{
-      backgroundSize : '150%',
-  })
-      
-      
-
-  t1.play(0);
-
+ 
                 
   
-  swiper.on('slideChange', function(e){
-    if(swiper.activeIndex == 0)
-    {      
-      t1.play(0);
-    }
-
-    if(swiper.activeIndex == 1)
-    {      
-      t2.play(0);
-    }
-
-    if(swiper.activeIndex == 2)
-    {      
-      t3.play(0);
-    }
-        
-    })
-
+  
 
   shareAnim.fromTo('.share-slide',5,{
                 backgroundSize: "150%",
