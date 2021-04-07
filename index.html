@@ -41,12 +41,7 @@ body {
 
 
 
-.slide-01 {
-  background: url('bg.png') no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  overflow: hidden;
-}
+
 
 .swiper-container {
   position: absolute;
@@ -166,11 +161,8 @@ body {
 }
 
 /* Share Screen Two */
-.slide-02 {
-  background: url('bg2.png') no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-}
+
+
 
 .fb {
   margin-top: min(7vw, 3vh);
@@ -187,11 +179,7 @@ body {
 
 /* Share Screen Three */
 
-.slide-03 {
- background: url('bg3.png') no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-}
+
 
 .slide-03-logo {
   margin-top: min(16vw, 8vh);
@@ -257,6 +245,7 @@ body {
             
             
         }
+
         .share-slide .close-icon
         {
             position: absolute;
@@ -407,20 +396,55 @@ body {
 
           }
 
-          .zoomOut
-          {
-              animation: zoom-out 5s linear;
-          }
-          @keyframes zoom-out
-          {
-              0%
-              {
-                  background-size: 120% 120%;
-              }
-              100%{
-                  background-size: 100% 100%;
-              }
+          
+          
+         .slide-01,.slide-02,.slide-03
+         {
+          overflow:hidden;
+         }
+        .bg-image-slide-01
+        {
+          width: 100%;
+          height: 100%;
+          background: url('bg.png') no-repeat;
+          background-position: center;
+          background-size: cover;
+          position: absolute;
+          z-index: -1;
+          transform: scale(1.5);
+           transition:  transform 5s ease-in-out;
+        }  
 
+        .bg-image-slide-02
+        {
+          width: 100%;
+          height: 100%;
+          background: url('bg2.png') no-repeat;
+          background-position: center;
+          background-size: cover;
+          position: absolute;
+          z-index: -1;
+          transform: scale(1.5);
+          transition:  transform 5s ease-in-out;
+        }
+
+        
+
+        .bg-image-slide-03
+        {
+          width: 100%;
+          height: 100%;
+          background: url('bg3.png') no-repeat;
+          background-position: center;
+          background-size: cover;
+          position: absolute;
+          z-index: -1;
+          transform: scale(1.5);
+          transition:  transform 5s ease-in-out;
+        }
+        .zoomOut
+          {
+               transform: scale(1);
           }
           
          
@@ -443,7 +467,7 @@ body {
           <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_ugzu2sv7.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
         </div>
         <div>
-         <!-- <h3 class="loading-tag">Loading...</h3>-->
+          <h3 class="loading-tag">Loading...</h3>
         </div>
       </div> 
 
@@ -478,6 +502,7 @@ body {
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide slide-01" id="s1">
+            <div class="bg-image-slide-01"></div>
             <audio id="audio">
               <source src="intro.mp3" type="audio/mpeg">
             </audio>
@@ -552,6 +577,8 @@ body {
           <div class="swiper-slide slide-02">
               <!-- <img src="left.png" alt="next-arrow-icon" class="main-nav prev swiper-button-prev  swiper-button-prev next-icon" /> -->
 
+              <div class="bg-image-slide-02"></div>
+
               <div class="my-wrapper">
               
                 <div class="my-container">
@@ -571,7 +598,7 @@ body {
           </div>
 
           <div class="swiper-slide slide-03">
-            
+             <div class="bg-image-slide-03"></div>
             <div class="my-wrapper">
               
                 <div class="my-container">
@@ -649,13 +676,10 @@ body {
   
 
    /*image zoom in animations*/
-    var Slide1 = document.querySelector(".slide-01");
-    var Slide2 = document.querySelector(".slide-02");
-    var Slide3 = document.querySelector(".slide-03");
-    var i = 3;
+   var i = 3;
     var j=3;
 
-    var test = setInterval(function(){ 
+     var test = setInterval(function(){ 
     console.log(swiper.activeIndex);
 
                if(swiper.activeIndex == 0)
@@ -664,14 +688,12 @@ body {
                     
                     if(i!==j)
                     {
-                    Slide1.classList.add("zoomOut");
-                    Slide2.classList.remove("zoomOut");
-                    Slide3.classList.remove("zoomOut");
-                    Slide2.style.backgroundSize = "120% 120%";
-                    Slide3.style.backgroundSize = "120% 120%";
-                    Slide1.style.backgroundSize = "100% 100%";
-                     
+
+                    $(".bg-image-slide-01").addClass("zoomOut");
+                    $(".bg-image-slide-02").removeClass("zoomOut");
+                    $(".bg-image-slide-03").removeClass("zoomOut");
                     
+  
                     j = i;
                     }
                 }
@@ -681,15 +703,11 @@ body {
                     
                     if(i!==j)
                     {
-                    
-                    Slide2.classList.add("zoomOut");
-                    Slide3.classList.remove("zoomOut");
-                    Slide1.classList.remove("zoomOut");
-                    
-                    Slide3.style.backgroundSize = "120% 120%";
-                    Slide1.style.backgroundSize = "120% 120%";
-                    Slide2.style.backgroundSize = "100% 100%";
-                   
+
+                    $(".bg-image-slide-01").removeClass("zoomOut");
+                    $(".bg-image-slide-02").addClass("zoomOut");
+                    $(".bg-image-slide-03").removeClass("zoomOut");
+                  
                     j = i;
                     }
                 }
@@ -700,21 +718,15 @@ body {
                     if(i!==j)
                     {
                     
-                    Slide2.classList.remove("zoomOut");
-                    Slide3.classList.add("zoomOut");
-                    Slide1.classList.remove("zoomOut");
-                   
-                    Slide2.style.backgroundSize = "120% 120%";
-                    Slide1.style.backgroundSize = "120% 120%";
-                    Slide3.style.backgroundSize = "100% 100%";
-                    
+                    $(".bg-image-slide-01").removeClass("zoomOut");
+                    $(".bg-image-slide-02").removeClass("zoomOut");
+                    $(".bg-image-slide-03").addClass("zoomOut");
                     j = i;
                     }
                 }
 
     },1000);
 
- 
 
  
                 
